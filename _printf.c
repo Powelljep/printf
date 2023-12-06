@@ -6,6 +6,8 @@
  *
  * Return: printed chars
  */
+
+
 int _printf(const char *format, ...)
 {
 	int i;

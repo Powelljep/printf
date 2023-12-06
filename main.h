@@ -4,28 +4,23 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define UNUSED(x) (void)(x);
+#define UNUSED(x) (void)(x)
 
 /**
- * struct fmt - struct that contain the format identifier and function
+ * struct fmt_types - struct that contain the format identifier and function
  *
  * @fmt: The format.
  * @fn: The function associated.
  */
-struct fmt
+struct fmt_types
 {
 	char fmt;
 	int (*fn)(va_list);
 };
 
-/**
- * typdef struct fmt  fmt_type - struct tha contains the idetifier an function
- *
- * @fmat: The format.
- * @fm_t: The function associated
- */
+typedef struct fmt_types fmt_type;
 
-typedef struct fmt fmt_type;
+
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -45,5 +40,5 @@ int print_octal(va_list list);
 int handle_octal(unsigned int num);
 int print_hexa_lower(va_list list);
 int print_hexa_upper(va_list list);
-int handle_hexa(unsigned int num, char * hexa);
+int handle_hexa(unsigned int num, char  *hexa);
 #endif
