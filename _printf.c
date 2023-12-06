@@ -48,7 +48,7 @@ int handle_print(const char *fmt, int *index, va_list list)
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
 		{'d', print_int}, {'i', print_int}, {'b', print_binary},
 		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexa_lower},
-		{'X', print_hexa_upper} ,{'\0', NULL}
+		{'X', print_hexa_upper}, {'\0', NULL}
 	};
 
 	for (j = 0; format_functions[j].fmt != '\0'; j++)
