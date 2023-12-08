@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int i;
-	int count_char = 0;
+	int count_char = 0, printed = 0;
 	va_list list;
 
 	if (format == NULL)
@@ -27,7 +27,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			count_char += handle_print(format, &i, list);
+			printed += handle_print(format, &i, list);
+			if (printed == -1)
+				return (-1);
+			count_char += printed;
 		}
 	}
 
@@ -44,7 +47,7 @@ int _printf(const char *format, ...)
  */
 int handle_print(const char *fmt, int *index, va_list list)
 {
-	int j, printed = 0;
+	int j, printed = -1;
 
 	fmt_type format_functions[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
@@ -55,6 +58,6 @@ int handle_print(const char *fmt, int *index, va_list list)
 
 	for (j = 0; format_functions[j].fmt != '\0'; j++)
 		if (fmt[*index] == format_functions[j].fmt)
-			printed += format_functions[j].fn(list);
+			return (format_functions[j].fn(list));
 	return (printed);
 }
