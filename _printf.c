@@ -1,5 +1,7 @@
 #include "main.h"
 
+void print_buffer(char buffer[], int *buff_index);
+
 /**
  * _printf - the function that works as printf update 1
  * @format: the formated text to be printed
@@ -18,11 +20,12 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
-			count_char += _putchar(format[i]);
+			_putchar(format[i]);
+			count_char++;
 		}
 		else
 		{
@@ -45,7 +48,7 @@ int _printf(const char *format, ...)
  * @index: the index
  * Return: the prited character count
  */
-int handle_print(const char *fmt, int *index, va_list list)
+int handle_print(const char *fmt, int *index,va_list list)
 {
 	int j, printed = -1;
 

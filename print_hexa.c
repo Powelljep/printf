@@ -2,7 +2,7 @@
 
 /**
  * print_hexa_lower - convert and prints number
- * @list - The argumet list
+ * @list: The argumet list
  *
  * Return: the count of character
  */
@@ -30,7 +30,7 @@ int print_hexa_upper(va_list list)
 }
 
 /**
- * handle_print - print hexa in upper or in lower
+ * handle_hexa - print hexa in upper or in lower
  * @num: the number
  * @hexa: the string
  *

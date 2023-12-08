@@ -15,7 +15,7 @@ int print_octal(va_list list)
 }
 /**
  * handle_octal - handle octal
- * @num - the number to be converted and printed
+ * @num: the number to be converted and printed
  *
  * Return: the count of the character to be printed
  */
