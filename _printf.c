@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			printed += handle_print(format, &i, list);
+			printed = handle_print(format, &i, list);
 			if (printed == -1)
 				return (-1);
 			count_char += printed;
