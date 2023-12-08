@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * _printf - prints formated text.
+ * _printf - prints formated text.i some change
  * @format: the text to be printed
  *
  * Return: the character printed
