@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - the function that works as printf
+ * _printf - the function that works as printf update 1
  * @format: the formated text to be printed
  *
  * Return: printed chars
